@@ -1,20 +1,18 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import './App.css';
+import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core';
-import theme from './theme/theme';
 import CssBaseline from '@material-ui/core/CssBaseline';
+
+import theme from './theme/theme';
+import './App.css';
+import Router from './router/Router';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className='App'>
-        <Button variant='contained' color='primary'>
-          ボタン
-        </Button>
-        <p>テキストの色も変更</p>
-      </div>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
